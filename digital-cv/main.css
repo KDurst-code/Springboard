@@ -1,0 +1,137 @@
+/* Base Page Styles*/
+body {
+    background-color: #f9fafb;
+    color: #1e1e1e;
+    font-family: 'Poppins',Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
+    background-color: #f3f4f6;
+    padding: 1rem;
+    text-align: center;
+}
+
+/*Use flexbox for header layout*/
+.header-container {
+    display: flex;
+    justify-content: space-between; /* spreads items apart */
+    align-items: center;
+    flex-wrap: wrap; /*adusts for smaller screens */
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Profile Picture on Top Left */
+.header-container img {
+    border-radius: 50%; /* makes image circular */
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /*prevents image distortion */
+    order: 1;
+}
+
+/*Centered Name */
+.header-container h1{
+    /* This is changed the color of h1's */
+    color: indigo;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1; /* allows it to stay centered */
+    order: 2;
+
+}
+
+/*Subtitle (Apiring Software Developer) */
+.header-containter h2 {
+    color: #5b21b6;
+    font-size: 1.8rem;
+    text-align: center;
+    flex-basis: 100%; /* ensures it appears below h1*/
+}
+
+/* Optional Contact Info (bottom right corner of header) */
+.header-contact {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    text-align: right;
+    font-size: 0.9rem;
+    order: 4;
+    color: #6b7280;
+}
+
+/*Navigation Styles */
+nav a {
+    text-decoration: none;
+    color: #3b0764;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly; /*spreads lings across page evenly */
+    padding: 0;
+    margin-top: 1rem;
+}
+
+nav a:hover {
+    color: #7c3aed;
+}
+
+/*Typography & Text Styles */
+p {
+    font-family: verdana;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+label {
+    font-family: verdana;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*Form Layout using Flexbox */
+form {
+    display: flex;
+    flex-direction: column; /*stacks form items vertically */
+    gap: 1rem; /*adds space between form items */
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: #f9f9ff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba (0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"] {
+    background-color: #7c3aed;
+}
+
+/*Comments for Clarity*/
+/*
+- Flexbox is used in .header-container to align profile photo (left), name (center), and contact info (bottom right).
+- Border radius: 50% makes the profile picture circular.
+- Flexbox also used in form to space inputs evenly and align submit button.
+- Hover transition on nav links for interactivity.
+*/
