@@ -1,120 +1,142 @@
-/* Base Page Styles*/
+/* ================================
+   Base Page Styles
+================================ */
 body {
     background-color: #f9fafb;
     color: #1e1e1e;
-    font-family: 'Poppins',Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
-/* Header Styles */
+/* Typography */
+p {
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-left: 1rem;
+}
+
+label {
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ================================
+   Header Styles
+================================ */
 header {
     background-color: #f3f4f6;
     padding: 1rem;
     text-align: center;
 }
 
-/*Use flexbox for header layout*/
 .header-container {
     display: flex;
-    justify-content: space-between; /* spreads items apart */
-    align-items: center;
-    flex-wrap: wrap; /*adusts for smaller screens */
+    flex-wrap: wrap;
     flex-direction: column;
-    position: relative;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    position: relative;
 }
 
-/* Profile Picture on Top Left */
 .header-container img {
-    border-radius: 50%; /* makes image circular */
+    border-radius: 50%;
     width: 150px;
     height: 150px;
-    object-fit: cover; /*prevents image distortion */
+    object-fit: cover;
     order: 1;
 }
 
-/*Centered Name */
-.header-container h1{
-    /* This is changed the color of h1's */
-    color: indigo;
-    font-size: 2.5rem;
+.header-container h1 {
+    color: black;
+    font-size: 2rem;
     text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 3px #0577b9;
     text-align: center;
-    flex: 1; /* allows it to stay centered */
+    flex: 1;
     order: 2;
-
 }
 
-/*Subtitle (Apiring Software Developer) */
-.header-containter h2 {
-    color: #5b21b6;
+.header-container h2 {
+    color: #0577b9;
     font-size: 1.8rem;
     text-align: center;
-    flex-basis: 100%; /* ensures it appears below h1*/
+    flex-basis: 100%;
 }
 
-/* Optional Contact Info (bottom right corner of header) */
 .header-contact {
     position: absolute;
     bottom: 10px;
     right: 20px;
     text-align: right;
     font-size: 0.9rem;
-    order: 4;
     color: #6b7280;
+    order: 4;
 }
 
-/*Navigation Styles */
-nav a {
-    text-decoration: none;
-    color: #3b0764;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
-}
-
+/* ================================
+   Navigation
+================================ */
 nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: space-evenly; /*spreads lings across page evenly */
+    justify-content: space-evenly;
     padding: 0;
     margin-top: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0577b9;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
     color: #7c3aed;
 }
 
-/*Typography & Text Styles */
-p {
-    font-family: verdana;
-    font-size: 20px;
-    line-height: 1.6;
-}
-
-label {
-    font-family: verdana;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/*Form Layout using Flexbox */
-form {
+/* ================================
+   Contact Form
+================================ */
+#contact {
     display: flex;
-    flex-direction: column; /*stacks form items vertically */
-    gap: 1rem; /*adds space between form items */
-    max-width: 600px;
-    margin: 2rem auto;
-    background-color: #f9f9ff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba (0, 0, 0, 0.1);
+    flex-direction: column; /* stack content vertically */
+    align-items: center;    /* center horizontally */
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1rem;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
+/* Form Layout */
+#contact-form {
+    display: flex;
+    flex-direction: column; /* vertical layout */
+    gap: 0.75rem;           /* consistent spacing */
+    max-width: 600px;
+    width: 90%;
+    margin: 1rem auto;
+    padding: 1.5rem;
+    background-color: #f9f9ff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Labels */
+#contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.25rem; /* small gap between label and input */
+    text-align: left;
+}
+
+/* Inputs and Textarea */
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ccc;
@@ -122,16 +144,215 @@ textarea {
     font-size: 1rem;
     font-family: 'Poppins', Arial, sans-serif;
     transition: background-color 0.3s ease;
+    box-sizing: border-box;
 }
 
-input[type="submit"] {
-    background-color: #7c3aed;
+/* Input Spacing */
+#contact-form input,
+#contact-form textarea {
+    margin-bottom: 0.75rem;
 }
 
-/*Comments for Clarity*/
+/* Submit Button */
+#contact-form input[type="submit"] {
+    background-color: #0577b9;
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form input[type="submit"]:hover {
+    background-color: #025b8a;
+}
+
+/* Contact Heading */
+#contact h2 {
+    text-align: center;
+    color: #1e1e1e;
+    text-shadow: #0577b9 1px 1px 2px;
+    margin-bottom: 1rem;
+}
+
+/* ================================
+   Education Section
+================================ */
+#education h2,
+#about h2,
+#experience h2,
+#skills h2,
+#contact h2 {
+    margin-top: 3rem;
+    color: #1e1e1e;
+    text-shadow: #0577b9 1px 1px 2px;
+}
+
+#education h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+#education li p {
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+    font-size: 16px;
+}
+
+#education li:nth-of-type(3) p {
+    margin-left: 0.5rem;
+}
+
+#education li:nth-of-type(3) p strong {
+    font-weight: bold;
+    color: #333;
+}
+
+#education li:nth-of-type(3) p em,
+#education li:nth-of-type(3) p i {
+    font-style: italic;
+    color: #555;
+    margin-left: 0.5rem;
+}
+
+#education .cert-table {
+    margin-top: 1rem;
+}
+
+/* ================================
+   Certifications Table
+================================ */
+#certifications-table {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+#certifications-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+}
+
+#certifications-table th,
+#certifications-table td {
+    border: 1px solid #ccc;
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+#certifications-table th {
+    background-color: #f3f4f6;
+    color: #1e1e1e;
+}
+
+#certifications-table td:nth-child(3) {
+    text-align: center;
+}
+
+/* ================================
+   Experience Section
+================================ */
+#experience h3 {
+    margin-top: 0.75em;
+    margin-bottom: 0.25rem;
+}
+
+#experience p {
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+#experience ul {
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+#experience li {
+    margin-bottom: 0.5rem;
+}
+
+.job {
+    margin-bottom: 25px;
+}
+
+.company-date {
+    font-size: 18px;
+    color: #555;
+    margin: 0 0 7px 0;
+}
+
+.job-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.job-title::before {
+    content: "▸";
+    position: absolute;
+    left: 0px;
+    color: #0077b5;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.job-responsibilities {
+    margin: 0 0 0 35px;
+    padding: 0;
+    list-style-type: disc;
+}
+
+.job-responsibilities li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* ================================
+   Footer / Connect Section
+================================ */
+.connect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem 2rem;
+    background-color: #f8f8f8;
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+
+.connect a {
+    color: #0577b9;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.connect a:hover {
+    text-decoration: underline;
+    color: #7c3aed;
+}
+
+.connect p {
+    margin: 0;
+    color: #1e1e1e;
+    font-weight: 500;
+}
+
+/* ================================
+   Comments / Notes
+================================ */
 /*
-- Flexbox is used in .header-container to align profile photo (left), name (center), and contact info (bottom right).
-- Border radius: 50% makes the profile picture circular.
-- Flexbox also used in form to space inputs evenly and align submit button.
-- Hover transition on nav links for interactivity.
+- Flexbox used in .header-container for photo, name, and contact alignment.
+- Circular profile image via border-radius: 50%.
+- Form uses flexbox for layout and spacing.
+- Hover transition added to nav links.
+- Education section styles separate bold and italic for certifications line.
+- Experience uses custom bullets for job titles.
 */
