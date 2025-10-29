@@ -62,3 +62,30 @@ console.log("Index of first letter:", index);
 console.log("Encrypted first letter (no wrap):", encryptedFirstLetter);
 console.log("Encrypted first letter (with wrap):", encryptedShiftedLetter);
 console.log("Teaser message:", teaserMessage);
+// ----------------------------------------------
+// Final Step: Encrypt the WHOLE message
+// ----------------------------------------------
+
+function caesarCipher(message, shift) {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let encrypted = "";
+
+  for (let i = 0; i < message.length; i++) {
+    let char = message[i].toLowerCase();
+
+    if (!alphabet.includes(char)) {
+      // If it's not a letter (like space or punctuation), just add it unchanged
+      encrypted += char;
+      continue;
+    }
+
+    let index = alphabet.indexOf(char);
+    let newIndex = (index + shift) % alphabet.length;
+    encrypted += alphabet[newIndex];
+  }
+
+  return encrypted.toUpperCase(); // Match the "BRUTUS" style
+}
+
+// Test it
+console.log(caesarCipher(friend, shiftValue)); // Should output: "EUXWXV"
