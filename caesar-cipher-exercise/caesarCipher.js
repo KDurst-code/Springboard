@@ -89,3 +89,15 @@ function caesarCipher(message, shift) {
 
 // Test it
 console.log(caesarCipher(friend, shiftValue)); // Should output: "EUXWXV"
+
+// ❓ Question: Why should we be careful when using == instead of === ?
+/*
+Using == can lead to unexpected results because it performs type coercion.
+That means JavaScript will try to convert the values to the same type before comparing them.
+
+Example:
+"3" == 3   // true (string is converted to number)
+"3" === 3  // false (different types, no conversion)
+
+Using === prevents bugs by requiring both the value AND the data type to match.
+*/
