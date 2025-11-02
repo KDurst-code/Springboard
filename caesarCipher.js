@@ -101,3 +101,41 @@ Example:
 
 Using === prevents bugs by requiring both the value AND the data type to match.
 */
+
+
+console.log(caesarCipher(friend, shiftValue)); // Should output: "EUXWXV"
+
+
+// ----------------------------------------------
+// Caesar's Party Guest List (ARRAY METHODS EXERCISE)
+// ----------------------------------------------
+
+const guests = ["ANTONY", "CICERO", "CASSIUS", "CLEOPATRA"];
+
+// Step 1 🧩 Add BRUTUS to the beginning
+guests.unshift("BRUTUS");
+// We can verify by checking the first element:
+console.log(guests[0]); // "BRUTUS"
+
+// Step 2 🧩 Add AUGUSTUS and LUCIA to the end
+guests.push("AUGUSTUS", "LUCIA");
+
+// Step 3 🧩 Check if SPARTACUS is invited
+const spartacusIndex = guests.indexOf("SPARTACUS");
+// If not found, indexOf returns -1
+
+// Step 4 🧩 Remove CASSIUS
+const indexToRemove = guests.indexOf("CASSIUS");
+guests.splice(indexToRemove, 1);
+
+// Step 5 🧩 Extract first 3 guests into a new array
+const specialGuests = guests.slice(0, 3);
+
+// Step 6 🧩 Sort list alphabetically while keeping the first (honored) guest at the top
+const honoredGuests = guests.slice(0, 1);
+const otherGuests = guests.slice(1);
+otherGuests.sort();
+
+const sortedGuests = honoredGuests.concat(otherGuests);
+
+console.log(sortedGuests);
