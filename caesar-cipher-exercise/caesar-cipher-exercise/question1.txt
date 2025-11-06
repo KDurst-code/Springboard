@@ -1,0 +1,6 @@
+Variables identified:
+- partyLocation
+- shiftValue
+- encryptedMessage
+- decryptedMessage
+- isPartySafe

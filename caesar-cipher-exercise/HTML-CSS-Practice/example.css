@@ -1,0 +1,6 @@
+.big {
+  margin-bottom: 20px;  /* now the small one */
+}
+.small {
+  margin-top: 200px;   /* now the big one */
+}
