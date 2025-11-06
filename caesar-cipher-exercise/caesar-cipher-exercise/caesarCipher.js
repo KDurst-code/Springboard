@@ -101,3 +101,14 @@ Example:
 
 Using === prevents bugs by requiring both the value AND the data type to match.
 */
+
+
+// ✅ Final Caesar Question Answer:
+// If Caesar encrypts "BRUTUS" using encryptMessage and then decrypts the result,
+// YES — the output will be "BRUTUS" again.
+//
+// Reason:
+// encryptMessage shifts each letter FORWARD in the alphabet by the shift value.
+// decryptMessage shifts each letter BACKWARD by the SAME shift value.
+// Since decryption reverses exactly what encryption did, the transformations cancel out.
+// End result = original message ("BRUTUS").
